@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Dichotomy</title>
+        <meta charset="utf-8" />
+        <link href="css/style.css" rel="stylesheet">
+    
+    </head>
+    
+    <body>
+        
+        <div id="container">
+            
+            <header>
+                <h3> Dichotomy Algorithm </h3>
+            </header>
+            
+            <input type="text" placeholder="00" id="n" name="n">
+            <input type="text" placeholder="000" id="x" name="x">
+            <span id="result">= 000</span>
+            <input id="calculer" type="submit" value="calculer" name="valider">
+        
+        </div>
+        
+    </body>
+    
+    <script src="script/dichotomy.js"></script>
+    <script>
+        var btn = document.getElementById("calculer");
+        btn.addEventListener("click",function(){
+            var n_value = parseInt(document.getElementById("n").value);
+            var x_value = parseInt(document.getElementById("x").value);
+            if(isNaN(n_value) || isNaN(x_value))
+            {
+                alert("Erreur de syntax !");
+                return;
+            }
+            document.getElementById("result").textContent = "= "+ racine(n_value,x_value).toFixed(9);
+        });
+    </script>
+    
+</html>
